@@ -1,0 +1,116 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}gallery{% endblock title %}
+{% block content %}
+ 
+<section id="inner-banner">
+    <div class="overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>GALLERY</h1>
+                </div>
+                <div class="col-sm-6">
+                    <h6 class="breadcrumb"><a href="index.html">Home</a> / Gallery</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="gallery-sec" style="margin-top:40px;">
+    <div class="container">
+        <div class="row text-center">
+            <ul class="clearfix">
+                <li>
+                    <a href="images/logos/horizontal_03.png" class="swipebox" title="My Caption">
+                        <div class="image"><img src="images/logos/horizontal_03.png">
+                            <div class="overlay"><i class="fa fa-search-plus"></i></div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="images/logos/horizontal_02.png" class="swipebox" title="My Caption">
+                        <div class="image"><img src="images/logos/horizontal_02.png">
+                            <div class="overlay"><i class="fa fa-search-plus"></i></div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="images/logos/horizontal.png" class="swipebox" title="My Caption">
+                        <div class="image"><img src="images/logos/horizontal.png">
+                            <div class="overlay"><i class="fa fa-search-plus"></i></div>
+                        </div>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="callout">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Change Their World. Change Yours. This changes everything.</h2>
+                <!-- /.callout-title -->
+            </div>
+            <!-- /.columns large-6 -->
+
+            <div class="col-md-6">
+                <div class="callout-actions">
+                    <a href="contact.html" class="button">Become Volunteer</a>
+
+                    <span class="callout-separator">
+                    <span>Or</span>
+                    </span>
+
+                    <a href="donate.html" class="button">Donate For Cause</a>
+                </div>
+                <!-- /.callout-actions -->
+            </div>
+            <!-- /.columns large-6 -->
+        </div>
+        <!-- /.row -->
+    </div>
+</div>
+
+
+
+{% include "footer.html" %}
+
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/bootsnav.js' %}"></script>
+<script src="{% static 'js/banner.js' %}"></script>
+<script src="{% static 'js/jquery.swipebox.js' %}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        /* Basic Gallery */
+        $('.swipebox').swipebox();
+
+        /* Video */
+        $('.swipebox-video').swipebox();
+
+        /* Dynamic Gallery */
+        $('#gallery').click(function(e) {
+            e.preventDefault();
+            $.swipebox([{
+                href: 'http://swipebox.csag.co/mages/image-1.jpg',
+                title: 'My Caption'
+            }, {
+                href: 'http://swipebox.csag.co/images/image-2.jpg',
+                title: 'My Second Caption'
+            }]);
+        });
+
+    });
+</script>
+<script src="{% static 'js/script.js' %}"></script>
+
+
+{% endblock  content %}
+ 
